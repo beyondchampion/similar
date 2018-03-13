@@ -7,11 +7,11 @@ Product [productCode=003, price=2.33, country=中国]
 }
 ---------B商品订单情况-----------
 {
-Product [productCode=001, price=2.34, country=中国]
-Product [productCode=002, price=1.23, country=中国]
-Product [productCode=003, price=1.23, country=中国]
-Product [productCode=004, price=2.23, country=中国]
-Product [productCode=005, price=2.33, country=中国]
+Product [productCode=1, price=1.14, country=美国]
+Product [productCode=2, price=1.23, country=中国]
+Product [productCode=3, price=1.23, country=美国]
+Product [productCode=4, price=2.23, country=中国]
+Product [productCode=5, price=2.33, country=中国]
 }
 
 A和B的余弦相似：0.9128709291752767
