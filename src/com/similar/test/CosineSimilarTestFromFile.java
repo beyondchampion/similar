@@ -46,7 +46,7 @@ public class CosineSimilarTestFromFile {
 		}
 		
 		System.out.println("");
-        Double cosSimilar = CosineSimilarAlgorithm.cosSimilarityByProduct(productsA,productsB); //计算A和B的余弦相似
+        Double cosSimilar = CosineSimilarAlgorithmByQualification.cosSimilarityByProduct(productsA,productsB); //计算A和B的余弦相似
         System.out.println("A和B的余弦相似："+cosSimilar); 
 
 	}

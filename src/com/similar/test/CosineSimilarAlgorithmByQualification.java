@@ -1,11 +1,8 @@
 package com.similar.test;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class CosineSimilarAlgorithm {	
+public class CosineSimilarAlgorithmByQualification {
 	
 	/**
 	 * 
@@ -19,8 +16,10 @@ public class CosineSimilarAlgorithm {
 	 */
 	public static Double cosSimilarityByProduct(List<Product> productA,List<Product> productB){
 		try{
-			Map<String, Integer> firstTfMap = segProductStr(productA);
-			Map<String, Integer> secondTfMap = segProductStr(productB);
+
+			Map<String, Integer> secondTfMap = segProductStr(productA);
+			Map<String, Integer> firstTfMap = segSecondProductStr(productB,secondTfMap);
+
 			if(firstTfMap.size()<secondTfMap.size()){
 				Map<String, Integer> temp=firstTfMap;
 				firstTfMap=secondTfMap;
@@ -75,8 +74,55 @@ public class CosineSimilarAlgorithm {
             e.printStackTrace();
         }
         return words;
-    }    
-    
+    }
+
+	/**
+	 *
+	 * @Title: segSecondProductStr
+	 * @Description: 返回  商品（商品编码、商品价格、国别）  计算第二个商品关键字
+	 * @param @param content
+	 * @param @return
+	 * @return Map<String,Integer>
+	 * @throws
+	 */
+	public static Map<String, Integer> segSecondProductStr(List<Product> products,Map<String, Integer> firstProductWords){
+
+		Map<String, Integer> words = new LinkedHashMap<String, Integer>();
+		//获取第一个商品所有键，将值归零
+		Set<String> s = firstProductWords.keySet();//获取KEY集合
+		for (String str : s) {
+			words.put(str, 0);
+		}
+		try {
+			if(products == null || products.size() == 0){
+				throw new RuntimeException("产品信息不能为空！");
+			}
+			for(Product product : products){
+				if (words.containsKey(product.getProductCode())) {
+					words.put(product.getProductCode(), words.get(product.getProductCode()) + 1);
+				} else {
+					words.put(product.getProductCode(), 1);
+				}
+
+				if (words.containsKey(product.getPrice().toString())) {
+					words.put(product.getPrice().toString(), words.get(product.getPrice().toString()) + 1);
+				} else {
+					words.put(product.getPrice().toString(), 1);
+				}
+
+				if (words.containsKey(product.getCountry())) {
+					words.put(product.getCountry(), words.get(product.getCountry()) + 1);
+				} else {
+					words.put(product.getCountry(), 1);
+				}
+			}
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return words;
+	}
+
 	/**
 	 * 
 	* @Title: calculateCos

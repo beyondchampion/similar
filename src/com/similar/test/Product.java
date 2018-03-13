@@ -4,7 +4,7 @@ public class Product {
 	
 	private String productCode; 
 	
-	private double price;
+	private Double price;
 	
 	private String country;
 	
@@ -14,10 +14,10 @@ public class Product {
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 	}
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	public String getCountry() {
