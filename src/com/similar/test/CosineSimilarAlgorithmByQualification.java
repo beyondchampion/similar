@@ -11,7 +11,7 @@ public class CosineSimilarAlgorithmByQualification {
      * @return Double
      * @throws
      * @Title: cosSimilarityByString
-     * @Description: 得到两个订单的相似性
+     * @Description: 根据用户的订单，得到两个用户的相似性
      */
     public static Double cosSimilarityByProduct(List<Product> productA, List<Product> productB) {
         try {

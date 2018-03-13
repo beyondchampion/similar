@@ -28,7 +28,7 @@ public class CosineSimilarTestFromFile {
                 product.setProductCode(productContentA[i].substring(productContentA[i].indexOf("productCode=") + 12, productContentA[i].indexOf(", price=")));
                 product.setPrice(Double.parseDouble(productContentA[i].substring(productContentA[i].indexOf("price=") + 6, productContentA[i].indexOf(", country="))));
                 product.setCountry(productContentA[i].substring(productContentA[i].indexOf("country=") + 8, productContentA[i].indexOf("]")));
-                System.out.println("---------A商品第" + i + "个订单情况-----------");
+                System.out.println("---------A用户第" + i + "个订单情况-----------");
                 System.out.println(product);
                 productsA.add(product);
             }
@@ -39,7 +39,7 @@ public class CosineSimilarTestFromFile {
                 product.setProductCode(productContentB[i].substring(productContentB[i].indexOf("productCode=") + 12, productContentB[i].indexOf(", price=")));
                 product.setPrice(Double.parseDouble(productContentB[i].substring(productContentB[i].indexOf("price=") + 6, productContentB[i].indexOf(", country="))));
                 product.setCountry(productContentB[i].substring(productContentB[i].indexOf("country=") + 8, productContentB[i].indexOf("]")));
-                System.out.println("---------B商品第" + i + "个订单情况-----------");
+                System.out.println("---------B用户第" + i + "个订单情况-----------");
                 System.out.println(product);
                 productsB.add(product);
             }

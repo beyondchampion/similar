@@ -17,7 +17,7 @@ public class CosineSimilarTestFromConsole {
         List<Product> productsA = new ArrayList<Product>();
         List<Product> productsB = new ArrayList<Product>();
 
-        System.out.print("输入A用户订单中产品数量：");
+        System.out.print("输入A用户订单数量：");
         if (sb.hasNextInt()) {
             // 判断输入的是否是整数
             aCount = sb.nextInt();
@@ -47,7 +47,7 @@ public class CosineSimilarTestFromConsole {
         }
 
 
-        System.out.print("输入B用户订单中产品数量：");
+        System.out.print("输入B用户订单数量：");
         if (sb.hasNextInt()) {
             // 判断输入的是否是整数
             bCount = sb.nextInt();
@@ -79,11 +79,11 @@ public class CosineSimilarTestFromConsole {
         sb.close();         //若没有关闭Scanner对象将会出现警告  
 
         System.out.println("");
-        System.out.println("---------A商品订单情况-----------");
+        System.out.println("---------A用户订单情况-----------");
         for (Product product : productsA) {
             System.out.println(product);
         }
-        System.out.println("---------B商品订单情况-----------");
+        System.out.println("---------B用户订单情况-----------");
         for (Product product : productsB) {
             System.out.println(product);
         }
